@@ -39,12 +39,13 @@ namespace BlazorServerB2C
             services.AddAuthorization(options =>
             {
                 // By default, all incoming requests will be authorized according to the default policy
-                // options.FallbackPolicy = options.;
+                // options.FallbackPolicy = options.DefaultPolicy;
             });
 
             services.AddRazorPages();
             services.AddServerSideBlazor()
                 .AddMicrosoftIdentityConsentHandler();
+
             services.AddSingleton<WeatherForecastService>();
         }
 
