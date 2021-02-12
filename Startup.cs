@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BlazorServerB2C.Data;
+using Serilog;
 
 namespace BlazorServerB2C
 {
@@ -63,6 +64,8 @@ namespace BlazorServerB2C
                 app.UseHsts();
             }
 
+            app.UseSerilogRequestLogging();
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
